@@ -1,2 +1,2 @@
 # Practidce
-Practice for languages
+Practice for languages with 백준
