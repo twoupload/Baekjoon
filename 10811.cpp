@@ -8,6 +8,7 @@ int main(void) {
 	int n, m; // 공, 바구니 개수, 최대 횟수
 	int i, j; // i switch to j
 	int arr[101] = { 0 };
+	int arr2[101] = { 0 };
 
 	cin >> n >> m;
 
@@ -16,11 +17,16 @@ int main(void) {
 	for (int p = 1; p <= m; p++) {
 		cin >> i >> j;
 		if (i != j) {
-			int tmp = j;
-			for (int h = i; i < j; i++) {
-				arr[h] = arr[tmp];
-				tmp--;
+			int tmp = i;
+			for (int h = j; h >= i; h--)
+			{
+				arr2[tmp++] = arr[h];
 			}
+
+			for (int k = i; k <= j; k++) {
+				arr[k] = arr2[k];
+			}
+
 		}
 
 		else continue;
